@@ -28,7 +28,6 @@ const Time = () => {
       boxShadow="2xl"
       p="6"
       rounded="md"
-      bg="white"
       style={{
         background: "radial-gradient(circle, #99edc3, #B2d3C2)",
         width: "250px",
