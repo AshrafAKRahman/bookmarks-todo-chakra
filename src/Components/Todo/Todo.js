@@ -9,6 +9,9 @@ import {
   Heading,
   Spacer,
   Text,
+  List,
+  ListItem,
+  Flex,
 } from "@chakra-ui/react";
 import { DeleteIcon, EditIcon } from "@chakra-ui/icons";
 
@@ -73,127 +76,143 @@ const Todo = () => {
       input.focus();
     }
   };
-
   return (
-    <Card
-      boxShadow="2xl"
-      p="6"
-      rounded="md"
-      maxHeight="400px"
-      overflow="scroll"
-      style={{
-        background: "radial-gradient(circle, #99edc3, #B2d3C2)",
-        width: "550px",
-        marginLeft: "30px",
-        marginTop: "30px",
-        borderRadius: "30px",
-      }}
-    >
-      <Box>
-        <Heading ml="150px">Todos</Heading>
-        <form onSubmit={addTodo}>
-          <Input
-            style={{ borderRadius: "60px" }}
-            size="lg"
-            width="300px"
-            type="text"
-            onChange={(e) => {
-              setTodo(e.target.value);
-              console.log(todo);
-            }}
-            value={todo}
-            ref={setInputFocus}
-          />
-          <Button
-            type="submit"
-            ml="80px"
-            boxShadow="inset 0 0 0 2px #FFFFFF"
-            style={{
-              borderRadius: "20px",
-              background: "#1D2951",
-              color: "white",
-            }}
-          >
-            Add +
-          </Button>
-        </form>
-        {todos.map((todo) => (
+    <List>
+      <ListItem mr={6}>
+        <Flex align="center">
           <Box
-            key={todo.id}
-            pt="20px"
-            mt="20px"
+            boxShadow="2xl"
+            p="6"
+            rounded="md"
+            height={400}
             style={{
-              borderRadius: "20px",
-              background: "#1D2951",
-              color: "white",
+              overflow: "hidden",
+              background: "radial-gradient(circle, #99edc3, #B2d3C2)",
+              width: "550px",
+              marginLeft: "30px",
+              marginTop: "30px",
+              borderRadius: "30px",
             }}
           >
-            {todo.id === editedTodo ? (
-              <div>
-                <Box
-                  display="flex"
-                  justifyContent="space-between"
-                  onSubmit={(e) => editTodo(e, todo.id)}
+            <Box borderRadius="md" boxShadow="md" height={100}>
+              <Heading ml="150px">Todos</Heading>
+              <form onSubmit={addTodo}>
+                <Input
+                  style={{ borderRadius: "60px" }}
+                  ml="10px"
+                  size="lg"
+                  width="300px"
+                  type="text"
+                  onChange={(e) => {
+                    setTodo(e.target.value);
+                    console.log(todo);
+                  }}
+                  value={todo}
+                  ref={setInputFocus}
+                />
+                <Button
+                  type="submit"
+                  ml="80px"
+                  boxShadow="inset 0 0 0 2px #FFFFFF"
+                  style={{
+                    borderRadius: "20px",
+                    background: "#1D2951",
+                    color: "white",
+                  }}
                 >
-                  <Input
-                    type="text"
-                    onChange={(e) => setEditedText(e.target.value)}
-                    defaultValue={todo.todoText}
-                    ref={setInputFocus}
-                    style={{ borderRadius: "60px" }}
-                    size="lg"
-                    width="230px"
-                    mb="40px"
-                    ml="15px"
-                  />
-                  <Button
-                    onClick={() => setEditedTodo("")}
-                    mr="20px"
+                  Add New
+                </Button>
+              </form>
+              <Box
+                mt="30px"
+                height={400}
+                style={{
+                  overflowY: "scroll",
+                  height: "200px",
+                }}
+              >
+                {todos.map((todo) => (
+                  <Box
+                    key={todo.id}
+                    pt="10px"
+                    mt="20px"
                     style={{
-                      borderRadius: "60px",
-                      background: "#99edc3",
+                      borderRadius: "20px",
+                      background: "#1D2951",
+                      color: "white",
                     }}
                   >
-                    Cancel
-                  </Button>
-                  <Button
-                    onClick={(e) => editTodo(e, todo.id)}
-                    mr="20px"
-                    style={{
-                      borderRadius: "60px",
-                      background: "#99edc3",
-                    }}
-                  >
-                    Update
-                  </Button>
-                </Box>
-              </div>
-            ) : (
-              <Box display="flex">
-                <Text ml="20px" mb="20px">
-                  {todo.todoText}
-                </Text>
-                <Spacer />
-                <Box display="flex" mr="20px">
-                  {todo.isCompleted === true ? (
-                    <ImCheckboxChecked
-                      onClick={() => toggleTodoState(todo.id)}
-                    />
-                  ) : (
-                    <ImCheckboxUnchecked
-                      onClick={() => toggleTodoState(todo.id)}
-                    />
-                  )}
-                  <DeleteIcon onClick={() => deleteTodo(todo.id)} />
+                    {todo.id === editedTodo ? (
+                      <div>
+                        <Box
+                          display="flex"
+                          justifyContent="space-between"
+                          onSubmit={(e) => editTodo(e, todo.id)}
+                          height={100}
+                        >
+                          <Input
+                            type="text"
+                            onChange={(e) => setEditedText(e.target.value)}
+                            defaultValue={todo.todoText}
+                            ref={setInputFocus}
+                            style={{ borderRadius: "60px" }}
+                            size="lg"
+                            width="230px"
+                            mb="40px"
+                            ml="15px"
+                          />
+                          <Button
+                            onClick={() => setEditedTodo("")}
+                            mr="20px"
+                            style={{
+                              borderRadius: "60px",
+                              background: "#99edc3",
+                            }}
+                          >
+                            Cancel
+                          </Button>
+                          <Button
+                            onClick={(e) => editTodo(e, todo.id)}
+                            mr="20px"
+                            style={{
+                              borderRadius: "60px",
+                              background: "#99edc3",
+                            }}
+                          >
+                            Update
+                          </Button>
+                        </Box>
+                      </div>
+                    ) : (
+                      <Box display="flex">
+                        <Text ml="20px" mb="20px">
+                          {todo.todoText}
+                        </Text>
+                        <Spacer />
+                        <Box display="flex" mr="20px">
+                          {todo.isCompleted === true ? (
+                            <ImCheckboxChecked
+                              onClick={() => toggleTodoState(todo.id)}
+                            />
+                          ) : (
+                            <ImCheckboxUnchecked
+                              onClick={() => toggleTodoState(todo.id)}
+                            />
+                          )}
+                          <DeleteIcon onClick={() => deleteTodo(todo.id)} />
 
-                  <EditIcon onClick={() => setEditedTodo(todo.id)} />
-                </Box>
+                          <EditIcon onClick={() => setEditedTodo(todo.id)} />
+                        </Box>
+                      </Box>
+                    )}
+                  </Box>
+                ))}
               </Box>
-            )}
+            </Box>
           </Box>
-        ))}
-      </Box>
-    </Card>
+        </Flex>
+      </ListItem>
+    </List>
   );
 };
 

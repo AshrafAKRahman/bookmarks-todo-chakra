@@ -2,7 +2,9 @@ import { Grid } from "@chakra-ui/react";
 import Greeting from "./Components/Greeting/Greeting";
 import Time from "./Components/Time/Time";
 import Todo from "./Components/Todo/Todo";
+import Bookmarks from "./Components/Bookmarks/Bookmarks";
 import "./App.css";
+import { ImBookmarks } from "react-icons/im";
 
 function App() {
   return (
@@ -11,6 +13,7 @@ function App() {
         <Greeting />
         <Time gridColumn="2" />
         <Todo gridColumn="2" />
+        <Bookmarks />
       </Grid>
     </div>
   );
