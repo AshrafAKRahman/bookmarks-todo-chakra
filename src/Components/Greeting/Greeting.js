@@ -55,7 +55,7 @@ const Greeting = () => {
       rounded="md"
       style={{
         background: "radial-gradient(circle, #99edc3, #B2d3C2)",
-        width: "350px",
+        width: "550px",
         height: "150px",
         marginLeft: "30px",
         marginTop: "30px",

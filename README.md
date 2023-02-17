@@ -1,70 +1,67 @@
-# Getting Started with Create React App
+# Bookmarks and To-Do App
+This is a web-based bookmarks and to-do list app created using React and styled with Chakra UI. The app allows users to save and organize bookmarks, as well as create and manage to-do lists.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Features
+Bookmarks
+#### Add Bookmarks: 
+Users can add a bookmark by entering the name and URL of the website.
 
-## Available Scripts
 
-In the project directory, you can run:
+#### Edit and Delete Bookmarks: 
+Users can edit or delete existing bookmarks.
 
-### `npm start`
+## To-Do List
+#### Add Tasks: 
+Users can add a task by entering the task name and due date.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+#### Mark Tasks as Complete: 
+Users can mark tasks as complete once they are finished.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+#### Edit and Delete Tasks: 
+Users can edit or delete existing tasks.
 
-### `npm test`
+## Deployment
+- [Bookmark/Todo Site](https://bookmarks-and-todo-mvp.onrender.com/)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Getting Started
+To use the bookmarks and to-do app, follow these steps:
 
-### `npm run build`
+- Clone the repository to your local machine.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Run npm install to install the necessary dependencies.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Run npm start to start the app.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The app will open in your web browser.
 
-### `npm run eject`
+## Tech Stack
+- React - JavaScript library used for building the app
+- Chakra UI - React UI framework used for app styling
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## File Structure
+#### src: 
+The main folder for the app's source code
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### components: 
+Folder containing React components used in the app
+- Bookmarks.js - Parent component for displaying individual bookmarks
+- BookmarkList.js - component for displaying a list of bookmarks
+- BookmarkForm.js - component for adding or editing bookmarks
+- Bookmark.js - is for displaying the image for the website the link is added from.
+- ToDo.js - component for displaying individual to-do list items
+- Greeting.js diaplays a greeting that allows the usert to add their name for personalisation purposes.
+- Time - is a component that displaysthe current date and time of where the user is located.
+- ToDo.js - component for displaying a list of to-do list items and also for adding or editing to-do list items
+pages - folder containing the different pages of the app
+- App.js - main component that renders the app's pages and components
+- index.js - main file that renders the app into the DOM
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Acknowledgments
+- React: JavaScript library used for building the app
+- Chakra UI: React UI framework used for app styling
+- Render: to deploy the app 
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Author
 
-## Learn More
+- [Ashraf Rahman](https://portfolio-bp1e.onrender.com/)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
